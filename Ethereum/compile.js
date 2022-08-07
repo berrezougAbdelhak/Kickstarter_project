@@ -14,7 +14,7 @@ const output=solc.compile(source,1).contracts
 
 //if file does not exist the function will create it for us 
 fs.ensureDirSync(buildPath)
-
+console.log(output)
 for (let contract in output){
     fs.outputJsonSync(
         path.resolve(buildPath,contract.replace(/:/g,'') + '.json' ),
